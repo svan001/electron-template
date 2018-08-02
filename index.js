@@ -9,9 +9,9 @@ const {
 } = electron;
 
 // if need to hide the app from taskbar/dock
-const hideApp = true;
+const hideApp = false;
 // Set up a tray icon
-const useTray = true;
+const useTray = false;
 
 // Init on ready
 let isLinux;

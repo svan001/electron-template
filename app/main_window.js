@@ -10,10 +10,10 @@ class MainWindow extends BrowserWindow {
             height: 500,
             width: 300,
             // Window decoration
-            frame: false,
+            frame: true,
             // Block window rezise
-            resizable: false,
-            show: false,
+            resizable: true,
+            show: true,
             // Needed on linux to show icon on taskbar (if wants to show in the task bar)
             icon: iconPath,
             // Won't show the tray icon app on taskBar, app.dock.hide() for mac
