@@ -9,9 +9,9 @@ const {
 } = electron;
 
 // if need to hide the app from taskbar/dock
-const hideApp = false;
+const hideApp = true;
 // Set up a tray icon
-const useTray = false;
+const useTray = true;
 
 // Init on ready
 let isLinux;
@@ -41,12 +41,12 @@ app.on('ready', () => {
     }
 
     const loadURL = `file://${__dirname}/src/index.html`;
-    mainWindow = new MainWindow(loadURL, appIconPath);
+    let optionals = {
+        hideOnBlur : true
+    }
+    mainWindow = new MainWindow(loadURL, appIconPath, optionals);
 
     if (useTray) {
-        let optionals = {
-            hideOnBlur : false
-        }
-        tray = new AppTray(appIconPath, mainWindow, optionals);
+        tray = new AppTray(appIconPath, mainWindow);
     }
 });
