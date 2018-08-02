@@ -9,11 +9,11 @@ class MainWindow extends BrowserWindow {
         super({
             height: 500,
             width: 300,
-            // No window decoration
-            frame: true,
+            // Window decoration
+            frame: false,
             // Block window rezise
-            resizable: true,
-            show: true,
+            resizable: false,
+            show: false,
             // Needed on linux to show icon on taskbar (if wants to show in the task bar)
             icon: iconPath,
             // Won't show the tray icon app on taskBar, app.dock.hide() for mac
@@ -28,7 +28,7 @@ class MainWindow extends BrowserWindow {
 
         if (optionnals) {
             if (optionnals.hideOnBlur) {
-                this.on('blur', this.onBlur.bind(this));
+                this.on('blur', this.hideWindow.bind(this));
             }
         }
     }
